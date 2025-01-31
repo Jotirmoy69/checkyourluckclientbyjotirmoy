@@ -126,7 +126,7 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${process.env.URI}/data`, data);
+      const response = await axios.post(`https://checkyourluckserverbyjotirmoy.vercel.app/data`, data);
   
       const result = response.data; // Axios response data
       console.log(result.message);
