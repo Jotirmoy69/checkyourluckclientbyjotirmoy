@@ -126,18 +126,19 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`https://checkyourluckserverbyjotirmoy.vercel.app/data`, data);
-  
-      const result = response.data; // Axios response data
-      console.log(result.message);
-      console.log(result.status);
-      const random = Math.floor(Math.random() * message.length);
-      toast.success(`${message[random]}`);
+        const response = await axios.post(`https://checkyourluckserverbyjotirmoy.vercel.app/data`, data);
+
+        const result = response.data; 
+        console.log(result.message);
+        console.log(response.status);
+        const random = Math.floor(Math.random() * message.length);
+        toast.success(`${message[random]}`);
     } catch (error) {
-      console.error('There was a problem with the Axios operation:', error);
-      toast.error(`Failed to submit. Please try again. Error: ${error.message}`);
+        console.error('There was a problem with the Axios operation:', error);
+        toast.error(`Failed to submit. Please try again. Error: ${error.message}`);
     }
-  };
+};
+
   
   return (
     <section className="bg-white h-screen text-black px-5">
